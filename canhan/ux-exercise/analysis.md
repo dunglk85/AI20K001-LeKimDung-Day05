@@ -5,39 +5,41 @@
 ## 4 paths
 
 ### 1. AI đúng
-- User chi tiêu 50k tại Circle K → Moni gợi ý "Ăn uống"
-- User thấy tag đúng, không cần làm gì thêm
-- UI: hiện tag + icon category, không hỏi confirm
+- User chi tiêu trong tháng 4 → Moni trả lời đúng
+- User chưa phân loại -> Moni cho vào danh mục "Chưa phân loại"
+- User phân loại giao dịch vào "Ăn uống" -> Moni cho vào danh mục "Ăn uống"
 
 ### 2. AI không chắc
-- User chuyển tiền 200k cho bạn → Moni không tag hoặc tag "Khác"
-- UI: không hiện gợi ý nào, user phải tự vào chỉnh
-- Vấn đề: không có cơ chế "bạn muốn phân loại giao dịch này không?"
+- User nhập prompt "a" -> Moni trả lời "Bạn vừa gửi một chữ 'a' - chắc là đang thử Moni đúng không. Nếu bạn muốn kiểm tra chi tiêu, lập ngân sách, hay ..... Bạn muốn Moni giúp gì"
+
 
 ### 3. AI sai
-- User mua sách trên Shopee → Moni tag "Mua sắm" thay vì "Học tập"
-- User phát hiện khi xem báo cáo tháng
-- Sửa: vào chi tiết giao dịch → đổi category → 3 bước
-- Vấn đề: không rõ AI có học từ correction này không
+- User đã lâu chưa có giao dịch, hỏi "giao dịch lần cuối của tôi trên Mono" -> Moni "Không có giao dịch nào được tìm thấy từ 2026-04-01 đến 2026-04-08"
+- Sửa: User hỏi "mình muốn bạn tra cứu chi tiêu của mình trong quá khứ" → 4 bước → đổi category → 2 bước
+- Vấn đề: không rõ AI hiểu intent của user
 
 ### 4. User mất niềm tin
-- Sau nhiều lần tag sai, user không tin báo cáo chi tiêu tự động nữa
-- Không có option "tắt auto-tag" hoặc "tag thủ công trước"
-- Không có fallback rõ ràng ngoài việc sửa từng giao dịch
+- Khi user nói "chán" vì không trả lời ngày được giao dịch gần nhất -> Moni: Xin lỗi, và khẳng định luôn ở đây để trợ giúp user.
 
-## Path yếu nhất: Path 3 + 4
-- Khi AI sai, recovery flow mất quá nhiều bước
-- Không có feedback loop rõ — user sửa nhưng không biết AI có học không
-- Không có exit/fallback cho user mất niềm tin
+## Path yếu nhất: Path 3
+- Khi AI sai do không hiểu intent của user.
 
 ## Gap marketing vs thực tế
-- Marketing: "Moni giúp quản lý chi tiêu thông minh"
-- Thực tế: auto-tag chỉ đúng ~70% cho giao dịch phổ biến, các trường hợp edge case
-  (chuyển tiền, mua online) thường bị tag sai hoặc không tag
+- Marketing: "Moni giúp quản lý chi tiêu thông minh" nhưng khi hỏi giao dịch lần cuối giao dịch không trả lời đúng
 - Gap lớn nhất: marketing không nói về khi AI sai — user kỳ vọng 100% chính xác
 
 ## Sketch
-(Ảnh đính kèm: sketch.jpg)
-- As-is: giao dịch → auto-tag → user thấy kết quả → nếu sai phải vào sửa thủ công
-- To-be: giao dịch → auto-tag → nếu confidence thấp: hiện "Bạn muốn phân loại?"
-  → user chọn → AI ghi nhận correction → hiện "Đã học, lần sau sẽ chính xác hơn"
+As-is
+- AI auto-tag giao dịch
+- User chỉ thấy kết quả cuối
+- Sai thì user tự sửa
+- Khi câu hỏi mơ hồ, AI trả lời không biết và hỏi lại
+- Dễ hiểu sai intent
+- Sai xong chỉ xin lỗi, khó lấy lại niềm tin
+To-be
+- AI auto-tag nhưng có kiểm tra confidence
+- Confidence thấp thì hỏi user xác nhận
+- Query mơ hồ thì clarify intent trước khi trả lời
+- User correction được ghi nhận như tín hiệu học
+- Khi AI sai, có flow recovery rõ ràng
+- Trải nghiệm trung thực hơn với kỳ vọng “thông minh và đáng tin”
