@@ -1,4 +1,36 @@
 PEC DRAFT – AI Customer Support cho Xanh SM
+
+🎯 Problem Statement
+
+Bối cảnh
+Trong quá trình mở rộng nhanh chóng, Xanh SM đang phải xử lý một lượng lớn yêu cầu từ khách hàng mỗi ngày, bao gồm: hỏi thông tin chuyến đi, khiếu nại tài xế, báo mất đồ, và các vấn đề liên quan đến thanh toán.
+
+Vấn đề cốt lõi
+Hiện tại, hệ thống chăm sóc khách hàng gặp 3 hạn chế chính:
+
+Quá tải và phản hồi chậm
+Các câu hỏi lặp lại chiếm phần lớn (ví dụ: giá cước, trạng thái chuyến, chính sách huỷ chuyến)
+Nhân viên CSKH không thể xử lý kịp trong giờ cao điểm
+→ Khách hàng phải chờ lâu, trải nghiệm kém
+Thiếu cá nhân hoá và ngữ cảnh
+Hệ thống hiện tại không hiểu sâu lịch sử người dùng
+Không tự động tra cứu dữ liệu liên quan (chuyến đi gần nhất, tài xế, vị trí,...)
+→ Trả lời chung chung, không giải quyết đúng vấn đề
+Xử lý khiếu nại chưa thông minh
+Khó phân loại mức độ nghiêm trọng của khiếu nại
+Không có cơ chế tự động đề xuất hướng xử lý
+→ Tăng chi phí vận hành và rủi ro mất khách
+
+Hệ quả (Impact)
+
+Tăng tỷ lệ khách hàng không hài lòng
+Gia tăng chi phí nhân sự CSKH
+Giảm khả năng giữ chân khách hàng trong thị trường cạnh tranh với các nền tảng ride-hailing khác
+
+Câu hỏi cần giải quyết
+
+Làm thế nào để xây dựng một hệ thống AI có thể hiểu đúng ý định khách hàng, truy xuất ngữ cảnh liên quan, và tự động xử lý hoặc hỗ trợ xử lý yêu cầu CSKH một cách nhanh chóng và chính xác, đồng thời giảm tải cho đội ngũ vận hành?
+
 1. 🧭 Overview
 
 Tên dự án: Xanh SM AI Support Agent
