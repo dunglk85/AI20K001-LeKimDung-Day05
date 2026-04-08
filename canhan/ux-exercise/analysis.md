@@ -30,6 +30,7 @@
 
 ## Sketch
 As-is
+- User khó tìm được plugin Moni trên ứng dụng Mono
 - AI auto-tag giao dịch
 - User chỉ thấy kết quả cuối
 - Sai thì user tự sửa
@@ -43,3 +44,4 @@ To-be
 - User correction được ghi nhận như tín hiệu học
 - Khi AI sai, có flow recovery rõ ràng
 - Trải nghiệm trung thực hơn với kỳ vọng “thông minh và đáng tin”
+
